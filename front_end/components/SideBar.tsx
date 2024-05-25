@@ -19,10 +19,12 @@ const SideBar = () => {
             Admin E.V.V
           </h3>
         </div>
-        <nav className="flex flex-col gap-2 pl-3 transition duration-300">
-          {SIDENAV_ITEM.map((item, index) => {
-            return <SidebarMenuItem item={item}></SidebarMenuItem>;
-          })}
+        <nav className="flex flex-col gap-2 transition duration-300">
+          <div className="flex flex-col gap-2 px-4">
+            {SIDENAV_ITEM.map((item, index) => {
+              return <SidebarMenuItem item={item}></SidebarMenuItem>;
+            })}
+          </div>
         </nav>
       </div>
     </>
