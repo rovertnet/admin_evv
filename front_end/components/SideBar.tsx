@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { SIDENAV_ITEM } from '../SIDEBAR_CONSTANTS';
+import SidebarMenuItem from './Sidebar-menu-item';
 
 const SideBar = () => {
   return (
@@ -13,7 +14,7 @@ const SideBar = () => {
         <nav className="flex flex-col gap-2 transition duration-300">
           {
             SIDENAV_ITEM.map((item,index)=>{
-              return <></>
+              return <SidebarMenuItem item={item}></SidebarMenuItem>
             })
           }
         </nav>
