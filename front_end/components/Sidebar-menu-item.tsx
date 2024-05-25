@@ -7,6 +7,8 @@ const SidebarMenuItem = ({item}:{item:sideNavitem}) => {
   const LinkStyle =
     "flex items-center min-h-[40px] h-full text-slate-400 py-2 px-4 hover:text-white transition duration-300";
     const ddLinkStyle = LinkStyle;
+    const subMenuDropDowm =
+      "text-slate-400 hover:text-white transition duration-300";
   return (
     <>
       {item.submenu ? (
@@ -21,7 +23,7 @@ const SidebarMenuItem = ({item}:{item:sideNavitem}) => {
               {
                 item.subMenuItem.map((subItem, index)=>{
                   return(
-                    <Link href={subItem.path} key={index}>
+                    <Link href={subItem.path} key={index} className={subMenuDropDowm} >
                       <span> {subItem.title} </span>
                     </Link>
                   )
