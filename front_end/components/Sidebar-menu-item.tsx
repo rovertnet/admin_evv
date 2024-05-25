@@ -18,7 +18,15 @@ const SidebarMenuItem = ({item}:{item:sideNavitem}) => {
           </a>
           <div className="bg-gray-600 border-l-4">
             <div className="grid gap-y-2 px-10 py-3 leading-5">
-              
+              {
+                item.subMenuItem.map((subItem, index)=>{
+                  return(
+                    <Link href={subItem.path} key={index}>
+                      <span> {subItem.title} </span>
+                    </Link>
+                  )
+                })
+              }
             </div>
           </div>
         </div>
