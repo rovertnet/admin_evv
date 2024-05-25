@@ -37,7 +37,9 @@ const SidebarMenuItem = ({ item }: { item: sideNavitem }) => {
                     <Link
                       href={subItem.path}
                       key={index}
-                      className={subMenuDropDowm}
+                      className={ `${subMenuDropDowm} ${
+                        subItem.path === pathName ? "text-white" : ""
+                      }`}
                     >
                       <span> {subItem.title} </span>
                     </Link>
