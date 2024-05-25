@@ -9,7 +9,11 @@ const SideBar = () => {
           <Image src="/mon_logo.png" alt='' height={35} width={35} className='w-12 mx-3.5 min-h-fit'></Image>
           <h3 className='pl-3 font-bold text-2xl text-slate-300 min-w-max'>Admin E.V.V</h3>
         </div>
-        <nav className=""></nav>
+        <nav className="flex flex-col gap-2 transition duration-300">
+          {
+            
+          }
+        </nav>
       </div>
     </>
   )
