@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { SIDENAV_ITEM } from '../SIDEBAR_CONSTANTS';
 
 const SideBar = () => {
   return (
@@ -11,7 +12,9 @@ const SideBar = () => {
         </div>
         <nav className="flex flex-col gap-2 transition duration-300">
           {
-            
+            SIDENAV_ITEM.map((item,index)=>{
+              return <></>
+            })
           }
         </nav>
       </div>
