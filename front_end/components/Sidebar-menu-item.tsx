@@ -1,6 +1,7 @@
 "use client";
 import { sideNavitem } from "@/types/Type";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { BiChevronRight } from "react-icons/bi";
 
@@ -14,6 +15,8 @@ const SidebarMenuItem = ({ item }: { item: sideNavitem }) => {
   const openSubMenu = () => {
     setShowSubMenu(!showSubMenu);
   }
+  const pathName = usePathname();
+  const activeLinkStyle = "rounded-md text-white light:text-black light:bg-slate-500 bg-gray-600"
   return (
     <>
       {item.submenu ? (
@@ -42,7 +45,12 @@ const SidebarMenuItem = ({ item }: { item: sideNavitem }) => {
           )}
         </div>
       ) : (
-        <Link href={item.path} className={LinkStyle}>
+        <Link
+          href={item.path}
+          className={`${LinkStyle} ${
+            item.path === pathName ? activeLinkStyle : ""
+          }`}
+        >
           {item.icon}
           <span className="ml-3 leading-6 font-semibold">{item.title}</span>
         </Link>
