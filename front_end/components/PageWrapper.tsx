@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-const PageWrapper = () => {
+const PageWrapper = ({children}:{children:ReactNode}) => {
   return (
     <div>PageWrapper</div>
   )

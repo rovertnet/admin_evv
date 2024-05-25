@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Karla } from "next/font/google";
 import "./globals.css";
+import SideBar from "@/components/SideBar";
+import Header from "@/components/Header";
+import PageWrapper from "@/components/PageWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <SideBar></SideBar>
+        <Header></Header>
+        <PageWrapper>{children}</PageWrapper>
+      </body>
     </html>
   );
 }
