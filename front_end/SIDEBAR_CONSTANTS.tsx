@@ -6,6 +6,6 @@ export const SIDENAV_ITEM: sideNavitem[]=[
   {
     title:"DashBoard",
     path:"/",
-    icon: <FaHome />
-  }
+    icon: <FaHome size={20} />
+  },
 ]
