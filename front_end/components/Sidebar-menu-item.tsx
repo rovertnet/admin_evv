@@ -33,7 +33,7 @@ const SidebarMenuItem = ({ item, toggleCollaps }: { item: sideNavitem, toggleCol
                 <span className="ml-3 leading-6 font-semibold">
                   {item.title}
                 </span>
-                <BiChevronRight className="ml-auto stroke-2 text-lg" />
+                <BiChevronRight className={`${showSubMenu ? 'rotate-90' : ''} ml-auto stroke-2 text-lg`} />
               </>
             )}
           </a>

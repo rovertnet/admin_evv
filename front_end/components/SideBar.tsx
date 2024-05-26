@@ -37,6 +37,7 @@ const SideBar = ({toggleCollaps}:{toggleCollaps:boolean}) => {
             {SIDENAV_ITEM.map((item, index) => {
               return (
                 <SidebarMenuItem
+                  key={index}
                   item={item}
                   toggleCollaps={toggleCollaps}
                 ></SidebarMenuItem>
