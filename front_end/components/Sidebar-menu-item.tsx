@@ -22,12 +22,20 @@ const SidebarMenuItem = ({ item, toggleCollaps }: { item: sideNavitem, toggleCol
       {item.submenu ? (
         <div className="rounded-md min-w-[18px]">
           <a
-            className={`${ddLinkStyle} ${pathName.includes(item.path) ? activeLinkStyle : ""}`}
+            className={`${ddLinkStyle} ${
+              pathName.includes(item.path) ? activeLinkStyle : ""
+            }`}
             onClick={openSubMenu}
           >
             {item.icon}
-            <span className="ml-3 leading-6 font-semibold">{item.title}</span>
-            <BiChevronRight className="ml-auto stroke-2 text-lg" />
+            {!toggleCollaps && (
+              <>
+                <span className="ml-3 leading-6 font-semibold">
+                  {item.title}
+                </span>
+                <BiChevronRight className="ml-auto stroke-2 text-lg" />
+              </>
+            )}
           </a>
           {showSubMenu && (
             <div className="bg-gray-600 border-l-4">
@@ -37,7 +45,7 @@ const SidebarMenuItem = ({ item, toggleCollaps }: { item: sideNavitem, toggleCol
                     <Link
                       href={subItem.path}
                       key={index}
-                      className={ `${subMenuDropDowm} ${
+                      className={`${subMenuDropDowm} ${
                         subItem.path === pathName ? "text-white" : ""
                       }`}
                     >
@@ -57,7 +65,9 @@ const SidebarMenuItem = ({ item, toggleCollaps }: { item: sideNavitem, toggleCol
           }`}
         >
           {item.icon}
-          {!toggleCollaps && <span className="ml-3 leading-6 font-semibold">{item.title}</span>}
+          {!toggleCollaps && (
+            <span className="ml-3 leading-6 font-semibold">{item.title}</span>
+          )}
         </Link>
       )}
     </>
