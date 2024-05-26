@@ -28,7 +28,7 @@ export default function RootLayout({
         <div className="flex min-h-screen">
           <SideBar toggleCollaps={toggleCollaps}></SideBar>
           <Header toggleCollaps={toggleCollaps} setToggleCollaps={setToggleCollaps}></Header>
-          <PageWrapper>{children}</PageWrapper>
+          <PageWrapper toggleCollaps={toggleCollaps}>{children}</PageWrapper>
         </div>
       </body>
     </html>
