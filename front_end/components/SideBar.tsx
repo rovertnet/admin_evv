@@ -2,9 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 import { SIDENAV_ITEM } from '../SIDEBAR_CONSTANTS';
 import SidebarMenuItem from './Sidebar-menu-item';
+import classNames from "classNames";
 
 const SideBar = ({toggleCollaps}:{toggleCollaps:boolean}) => {
-  const asideStyle = "fixed bg-gray-800 text-gray-400 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]"
+  const asideStyle = classNames(
+    "fixed bg-gray-800 text-gray-400 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
+    {
+      ["w-[5rem]"]: toggleCollaps,
+      ["w-[20rem]"]: toggleCollaps
+    }
+  );
+  
   return (
     <>
       <div className={asideStyle}>
