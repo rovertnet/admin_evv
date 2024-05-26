@@ -22,16 +22,25 @@ const SideBar = ({toggleCollaps}:{toggleCollaps:boolean}) => {
             alt=""
             height={35}
             width={35}
-            className="w-12 mx-3.5 min-h-fit"
+            className="w-12 mx-5.5 min-h-fit "
           ></Image>
-          <h3 className="pl-3 font-bold text-2xl text-slate-300 min-w-max">
-            Admin E.V.V
-          </h3>
+          {!toggleCollaps &&
+            <>
+              <h3 className="pl-3 font-bold text-2xl text-slate-300 min-w-max">
+                Admin E.V.V
+              </h3>
+            </>
+          }
         </div>
         <nav className="flex flex-col gap-2 transition duration-300">
           <div className="flex flex-col gap-2 px-4">
             {SIDENAV_ITEM.map((item, index) => {
-              return <SidebarMenuItem item={item} toggleCollaps={toggleCollaps}></SidebarMenuItem>;
+              return (
+                <SidebarMenuItem
+                  item={item}
+                  toggleCollaps={toggleCollaps}
+                ></SidebarMenuItem>
+              );
             })}
           </div>
         </nav>
