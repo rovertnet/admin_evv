@@ -8,7 +8,7 @@ const SideBar = ({toggleCollaps}:{toggleCollaps:boolean}) => {
   const asideStyle = classNames(
     "fixed bg-gray-800 text-gray-400 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
     {
-      ["w-[5rem]"]: toggleCollaps,
+      ["sm:w-[5rem] sm:left-0 left-[100%]"]: toggleCollaps,
       ["w-[20rem]"]: toggleCollaps
     }
   );
