@@ -3,8 +3,10 @@ import Image from 'next/image';
 import { SIDENAV_ITEM } from '../SIDEBAR_CONSTANTS';
 import SidebarMenuItem from './Sidebar-menu-item';
 import classNames from "classNames";
+import { useSidebarToggle } from '@/hooks/use-sidebar-toggle';
 
-const SideBar = ({toggleCollaps}:{toggleCollaps:boolean}) => {
+const SideBar = () => {
+  const {toggleCollaps} = useSidebarToggle();
   const asideStyle = classNames(
     "fixed bg-gray-800 text-gray-400 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
     {

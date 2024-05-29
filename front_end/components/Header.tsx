@@ -1,17 +1,14 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import { IoMenuSharp } from "react-icons/io5";
 import classNames from 'classNames';
+import { useSidebarToggle } from '@/hooks/use-sidebar-toggle';
 
-const Header = ({
-  toggleCollaps,
-  setToggleCollaps,
-}: {
-  toggleCollaps: boolean;
-  setToggleCollaps: Dispatch<SetStateAction<boolean>>;
-}) => {
+const Header = () => {
+
+  const { toggleCollaps, invokToggleCollaps } = useSidebarToggle();
 
   const sideBarToggle = () => {
-    setToggleCollaps(!toggleCollaps)
+    invokToggleCollaps();
   }
 
   const headerStyle = classNames(

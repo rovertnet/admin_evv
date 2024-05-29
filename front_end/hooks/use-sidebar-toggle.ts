@@ -1,4 +1,4 @@
-import { create } from "domain"
+import { create } from 'zustand';
 
 interface sidebartoggle{
   toggleCollaps:  boolean,
@@ -6,6 +6,6 @@ interface sidebartoggle{
 }
 
 export const useSidebarToggle = create<sidebartoggle>((set, get) => ({
-  toggleCollaps:  false,
-  invokToggleCollaps: ()  =>  set({toggleCollaps:!get().toggleCollaps})
-}))
+  toggleCollaps: false,
+  invokToggleCollaps: () => set({ toggleCollaps: !get().toggleCollaps }),
+}));

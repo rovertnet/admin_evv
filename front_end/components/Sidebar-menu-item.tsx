@@ -1,4 +1,5 @@
 "use client";
+import { useSidebarToggle } from "@/hooks/use-sidebar-toggle";
 import { sideNavitem } from "@/types/Type";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,12 +12,14 @@ const SidebarMenuItem = ({ item, toggleCollaps }: { item: sideNavitem, toggleCol
   const ddLinkStyle = LinkStyle;
   const subMenuDropDowm =
     "text-slate-400 py-2 px-4 hover:text-white transition duration-300";
+  
   const [showSubMenu, setShowSubMenu] = useState(false);
   const openSubMenu = () => {
     setShowSubMenu(!showSubMenu);
   }
   const pathName = usePathname();
-  const activeLinkStyle = "rounded-md text-white light:text-black light:bg-slate-500 bg-gray-600"
+  const activeLinkStyle = "rounded-md text-white light:text-black light:bg-slate-500 bg-gray-600";
+
   return (
     <>
       {item.submenu ? (
